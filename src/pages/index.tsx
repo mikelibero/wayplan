@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<Attributes> = async () => {
       logo: footer_data.footer.data.attributes.logo,
       frase: footer_data.footer.data.attributes.frase
     },
-    revalidate: 10,
+    //revalidate: 10,
   };
 };
 
