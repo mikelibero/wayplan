@@ -1,5 +1,7 @@
 import Home_Layout from '@/components/layouts/home/Home_Layout'
 import { Attributes } from '@/components/navigation/footer/IFooter_Navigation'
+import { fetchGraphQL } from 'lib'
+import { GetStaticProps } from 'next'
 // import { fetchGraphQL } from 'lib'
 import Head from 'next/head'
 import type { ReactElement } from 'react'
@@ -24,35 +26,36 @@ Page.getLayout = function getLayout(page: ReactElement) {
   )
 }
 
-// export const getStaticProps: GetStaticProps<Attributes> = async () => {
-//   const query = `
-//   {
-//     footer {
-//       data {
-//         attributes {
-//           logo {
-//             image {
-//               data{
-//                 attributes{
-//                   url
-//                   alternativeText
-//                 }
-//               }
-//             }
-//           }
-//           frase
-//         }
-//       }
-//     }
-//   }
-//   `;
-//   const footer_data: Data = await fetchGraphQL(query, {});
-//   return {
-//     props: {
-//       logo: footer_data.footer.data.attributes.logo,
-//       frase: footer_data.footer.data.attributes.frase
-//     },
-//   };
-// };
+export const getStaticProps: GetStaticProps<Attributes> = async () => {
+  const query = `
+  {
+    footer {
+      data {
+        attributes {
+          logo {
+            image {
+              data{
+                attributes{
+                  url
+                  alternativeText
+                }
+              }
+            }
+          }
+          frase
+        }
+      }
+    }
+  }
+  `;
+  const footer_data: any = await fetchGraphQL(query, {});
+
+  return {
+    props: {
+      logo: footer_data.footer.data.attributes.logo,
+      frase: footer_data.footer.data.attributes.frase
+    },
+  };
+};
 
 export default Page
