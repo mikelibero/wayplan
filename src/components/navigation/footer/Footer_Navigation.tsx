@@ -1,8 +1,8 @@
+import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from 'next/image';
 import Link from 'next/link';
 import React from "react";
-import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Attributes } from './IFooter_Navigation';
 
 export interface Footer_NavigationProps {
@@ -11,13 +11,16 @@ export interface Footer_NavigationProps {
 
 const Footer_Navigation: React.FC<Attributes> = ({ logo, frase }) => {
   const y = new Date().getFullYear(); //Año actual
+  const { IMAGES_URL } = process.env;
+
+
   return (
     <footer className="block bg-tertiary pt-5 pb-5">
       <div className="container mx-auto px-4 flex flex-col items-center text-center">
         {logo &&
           <div className="local-scroll mb-5 wow fadeInUp" data-wow-duration="1.5s">
             <a href="#top">
-              <Image className="w-12" src={"http://127.0.0.1:1337" + logo.image.data.attributes.url} alt={logo.image.data.attributes.alternativeText} width={150} height={108} />
+              <Image className="w-12" src={IMAGES_URL + logo.image.data.attributes.url} alt={logo.image.data.attributes.alternativeText} width={150} height={108} />
               <span className="sr-only">Scroll to the top of the page</span>
             </a>
           </div>
