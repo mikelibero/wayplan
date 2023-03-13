@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React, { useEffect } from "react";
 
 export interface Home_SurfacesHeaderProps { }
@@ -20,8 +21,13 @@ const Home_SurfacesHeader: React.FC<Home_SurfacesHeaderProps> = ({ ...props }) =
 
   }, []);
 
+  const { IMAGES_URL } = process.env;
+
   return (
-    <section className="z-0 parallax-2 bg-[url('/images/section-bg-5.jpg')] bg-cover relative bg-center">
+    <section className="z-0 parallax-2 relative">
+
+      <Image className="z-0 relative" src={IMAGES_URL + '/uploads/section_bg_5_7d9b7a306b.jpg'} alt="bg" width={1500} height={108} />
+
       <div className="js-height-full">
         <div className="home-content container">
           <div className="home-text">
