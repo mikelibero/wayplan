@@ -5,6 +5,9 @@ import { faFacebookF, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Attributes } from './IFooter_Navigation';
 
+export interface Footer_NavigationProps {
+
+}
 
 const Footer_Navigation: React.FC<Attributes> = ({ logo, frase }) => {
   const y = new Date().getFullYear(); //Año actual
