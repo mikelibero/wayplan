@@ -25,10 +25,8 @@ const Home_SurfacesHeader: React.FC<Home_SurfacesHeaderProps> = ({ ...props }) =
 
   return (
     <section className="z-0 parallax-2 relative">
-
-      <Image className="z-0 relative" src={IMAGES_URL + '/uploads/section_bg_5_7d9b7a306b.jpg'} alt="bg" width={1500} height={108} />
-
       <div className="js-height-full">
+        <Image className="z-0 relative" src={IMAGES_URL + '/uploads/section_bg_5_7d9b7a306b.jpg'} alt="bg" width={1920} height={1080} />
         <div className="home-content container">
           <div className="home-text">
             {/* <h1 className="hs-line-8 font-alt mb-50 mb-xs-30">Unique experience with</h1>
