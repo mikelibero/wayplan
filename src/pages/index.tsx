@@ -51,6 +51,7 @@ export const getStaticProps: GetStaticProps<Attributes> = async () => {
   const footer_data: any = await fetchGraphQL(query, {});
 
   return {
+    revalidate: 10,
     props: {
       logo: footer_data.footer.data.attributes.logo,
       frase: footer_data.footer.data.attributes.frase
